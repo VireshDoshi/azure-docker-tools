@@ -1,0 +1,12 @@
+#  Local .terraform directories
+**/.terraform/*
+
+# .tfstate files
+*.tfstate
+
+# .tfvars files
+
+# swp files from vim
+*.swp
+
+terraform-provider-luminate_v*
