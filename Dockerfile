@@ -1,6 +1,6 @@
 FROM centos:7.6.1810
-ENV TERRAFORM_VERSION=0.12.24
-ENV PACKER_VERSION=1.5.4
+ENV TERRAFORM_VERSION=0.14.2
+ENV PACKER_VERSION=1.6.5
 
 RUN yum install -y epel-release
 RUN yum update -y
@@ -38,7 +38,4 @@ RUN curl https://omnitruck.chef.io/install.sh | bash -s -- -P inspec
 RUN yum -y update openssl libcurl
 ADD VERSION .
 
-RUN mkdir -p /root/.terraform.d/plugins/linux_amd64
-ADD terraform-provider-luminate_v0.0.1 /root/.terraform.d/plugins/linux_amd64
-RUN chmod 700 /root/.terraform.d/plugins/linux_amd64/terraform-provider-luminate_v0.0.1
 CMD ["/bin/bash"]
